@@ -1,6 +1,19 @@
+
+<html>
+     <script type="text/javascript" src="enviarMaquina.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    enviarMaquina();
+</script>
 <?php
+ 
 
 header('Content-Type: text/html; charset=utf-8');
+
+$data = json_decode(file_get_contents('php://input'), true);
+print_r($data);
+
+
 
 $tabela['q0']['|'] = array('substitui' => '|', 'direcao' => 'd', 'estado' => 'q0');
 
@@ -33,7 +46,7 @@ $tabela['q10']['a'] = array('substitui' => 'a', 'direcao' => 'd', 'estado' => 'q
 
 $caracterInicial = "|";
 $caracterFinal = "#";
-$palavra = $caracterInicial."bbabbbbbbbab".$caracterFinal;
+$palavra = $caracterInicial."bbabbab".$caracterFinal;
 
 $palavraArray = str_split($palavra, 1);
 
@@ -79,3 +92,5 @@ while ($valida == 2) {
     }
 }
 ?>
+
+</html>
