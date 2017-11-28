@@ -55,7 +55,7 @@
 <script type="text/javascript">
     function gerarTabela() {
 
-        $("#rowLetras").append("<td class='letra'><div  id='0' class='form-title'>|</div></td><td class='letra'><div id='1' class='form-title'>#</div></td>");
+        $("#rowLetras").append("<td class='letra'><div  id='0' class='form-title'>¬</div></td><td class='letra'><div id='1' class='form-title'>#</div></td>");
         idLetras = 2;
         for (var x = 0; x < $("#nrLetras").val(); x++) {
             $("#rowLetras").append("<td class='letra'><div class='form-title'>Letra</div><input class='form-field inputLetra' id='" + idLetras + "' type='text'/></td>");
@@ -133,8 +133,8 @@
                 }
                 if (letraAtual == 0) {
 
-                    if (arrayInformacoes[estadoAtual]["|"] == null) {
-                        arrayInformacoes[estadoAtual]["|"] = {};
+                    if (arrayInformacoes[estadoAtual]["¬"] == null) {
+                        arrayInformacoes[estadoAtual]["¬"] = {};
                     }
                     var item = {};
 
@@ -150,7 +150,7 @@
                     });
 
 
-                    arrayInformacoes[estadoAtual]["|"] = item;
+                    arrayInformacoes[estadoAtual]["¬"] = item;
                 }
                 if (letraAtual == 1) {
 

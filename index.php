@@ -14,7 +14,7 @@ $arquivoMaquinaExistente = file_get_contents('maquinas/'.$request['nomeMaquina']
 
 $tabela = json_decode($arquivoMaquinaExistente,true);
 
-$caracterInicial = "|";
+$caracterInicial = "¬";
 $caracterFinal = "#";
 
 $palavra = $caracterInicial . $request['sentenca'] . $caracterFinal;
@@ -25,13 +25,14 @@ $palavraArray = str_split($palavra, 1);
 $valida = 2;
 $estadoAtual = $request['estadoInicial'];
 $estadoFinal = $request['estadoFinal'];
+$arrayEstadosFinais = explode(";", $estadoFinal);
 $posicaoPalavra = 0;
 
 $arquivo = fopen("testes.log", "ab");
 
 
 $hora = date("H:i:s T");
-fwrite($arquivo, "[$hora] " . print_r($tabela[$estadoAtual], TRUE) . "\r\n");
+fwrite($arquivo, "[$hora] " . print_r($estadoFinal, TRUE) . "\r\n");
 fclose($arquivo);
 while ($valida == 2) {
     if (array_key_exists($posicaoPalavra, $palavraArray)) {
@@ -54,7 +55,7 @@ while ($valida == 2) {
             //fim alterar posicao da palavra na fita
 
             $estadoAtual = $tabela[$estadoAtual][$atual]['estado'];
-            if ($estadoAtual == $estadoFinal) {
+            if  ((in_array($estadoAtual, $arrayEstadosFinais)) && ($atual=='#')) {
                 $valida = 1;
                 echo json_encode(array("resposta" => "VALIDA"));
             }
