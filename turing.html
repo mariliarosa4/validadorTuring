@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Home</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="turing.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <form class="form-container">
+            <div class="form-title">
+                <h2>Definições</h2>
+            </div><br>
+            <div class="form-title">Número de estados:</div>
+            <input class="form-field nrEstados" id="nrEstados" type="number"/>
+            <div class="form-title">Número de letras</div>
+            <input class="form-field nrLetras" id="nrLetras" type="number"/>
+            <div class="submit-container">
+                <div class="submit-button" onclick="gerarTabela();">Gerar Tabela</div>
+            </div>
+
+
+            <table>
+                <tbody id="bodyTable">
+                    <tr id="rowLetras">
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </form>
+    </body>
+</html>
+<script type="text/javascript">
+    function gerarTabela() {
+
+        $("#rowLetras").append("<td class='letra'><div  id='0' class='form-title'>|</div></td><td class='letra'><div id='1' class='form-title'>#</div></td>");
+        idLetras = 2;
+        for (var x = 0; x < $("#nrLetras").val(); x++) {
+            $("#rowLetras").append("<td class='letra'><div class='form-title'>Letra</div><input class='form-field inputLetra' id='" + idLetras + "' type='text'/></td>");
+            idLetras++;
+        }
+
+        for (var x = 0; x < $("#nrEstados").val(); x++) {
+            $("#bodyTable").append("<tr class='rowEstados' id='" + x + "'><td><div class='form-title'>Estado</div><input class='form-field estado' id='" + x + "' type='text'/></td></tr>");
+        }
+
+        idLetras = 2;
+        $('.rowEstados').each(function () {
+            $(this).append("<td id='" + 0 + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
+            $(this).append("<td id='" + 1 + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
+            for (var y = 0; y < $("#nrLetras").val(); y++) {
+                $(this).append("<td id='" + idLetras + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
+                idLetras++;
+            }
+            idLetras = 2;
+        });
+
+        $(".form-container").append("<div class='submit-container'><div class='submit-button' onclick='salvarTabela();'>Salvar</div></div>");
+    }
+
+    function salvarTabela() {
+
+        var arrayEstados = [];
+        var numeroEstados = 0;
+        $(".form-field.estado").each(function () {
+            arrayEstados.push($(this).val());
+            numeroEstados++;
+        });
+
+        var arrayLetras = [];
+        var numeroLetras = 2;
+        $(".form-field.inputLetra").each(function () {
+            arrayLetras[$(this).attr('id')] = ($(this).val());
+            numeroLetras++;
+        });
+
+        var arrayInformacoes = {};
+
+        $('.rowEstados').each(function () {
+            var letraAtual = 0;
+            var estadoAtual = arrayEstados[$(this).attr('id')];
+
+            if (arrayInformacoes[estadoAtual] == null) {
+                arrayInformacoes[estadoAtual] = {};
+            }
+
+            $(this).children('td').each(function () {
+                var letraAtual = $(this).attr('id');
+
+                if (letraAtual >= 2) {
+
+                    if (arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] == null) {
+                        arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] = {};
+                    }
+
+
+                    var item = new Object();
+                    $(this).children(".novoEstado").each(function () {
+
+                        item.estado = $(this).val();
+                    });
+                    $(this).children(".substituir").each(function () {
+                        item.substitui = $(this).val();
+                    });
+                    $(this).children(".direcao").each(function () {
+                        item.direcao = $(this).val();
+                    });
+
+                    arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] = item;
+                }
+                if (letraAtual == 0) {
+
+                    if (arrayInformacoes[estadoAtual]["|"] == null) {
+                        arrayInformacoes[estadoAtual]["|"] = {};
+                    }
+                    var item = {};
+
+                    $(this).children(".novoEstado").each(function () {
+
+                        item ["estado"] = $(this).val();
+                    });
+                    $(this).children(".substituir").each(function () {
+                        item["substitui"] = $(this).val();
+                    });
+                    $(this).children(".direcao").each(function () {
+                        item["direcao"] = $(this).val();
+                    });
+
+
+                    arrayInformacoes[estadoAtual]["|"] = item;
+                }
+                if (letraAtual == 1) {
+
+                    if (arrayInformacoes[estadoAtual]["#"] == null) {
+                        arrayInformacoes[estadoAtual]["#"] = {};
+                    }
+                    var item = {};
+                    $(this).children(".novoEstado").each(function () {
+
+                        item ["estado"] = $(this).val();
+                    });
+                    $(this).children(".substituir").each(function () {
+                        item["substitui"] = $(this).val();
+                    });
+                    $(this).children(".direcao").each(function () {
+                        item["direcao"] = $(this).val();
+                    });
+
+
+                    arrayInformacoes[estadoAtual]["#"] = item;
+                }
+                letraAtual++;
+            });
+        });
+
+        console.log(JSON.stringify(arrayInformacoes));
+
+
+        $.ajax({
+            type: 'post',
+            data: JSON.stringify(arrayInformacoes),
+            dataType: 'json',
+            contentType: 'application/json',
+            url: 'salvarMaquina.php',
+            success: function (response) {
+                console.log(response);
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+
+            }
+
+        });
+        $(".form-container").append("<div class='form-title'>Inserir sentença:</div><input class='form-field' type='text'/>");
+        $(".form-container").append("<div class='submit-container'><div class='submit-button' onclick='salvarTabela();'>Testar</div></div>");
+    }
+
+</script>

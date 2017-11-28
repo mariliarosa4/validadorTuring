@@ -1,0 +1,68 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+body{
+  margin: 0px;
+}
+.form-container {
+   border: 0px solid #f2e3d2;
+   background: #b8b8b8;
+   background: -webkit-gradient(linear, left top, left bottom, from(#deafc6), to(#b8b8b8));
+   background: -webkit-linear-gradient(top, #deafc6, #b8b8b8);
+   background: -moz-linear-gradient(top, #deafc6, #b8b8b8);
+   background-image: -ms-linear-gradient(top, #deafc6 0%, #b8b8b8 100%);
+   text-decoration: none;
+   vertical-align: middle;
+   min-width:300px;
+   padding:20px;
+   width:98%;
+ }
+.form-field {
+   border: 1px solid #c9b7a2;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   padding:8px;
+   margin-bottom:20px;
+   width:75px;
+   }
+   td{
+     padding-right:20px
+   }
+   .letra{
+     text-align: center;
+   }
+   .nrEstados, .nrLetras{
+     width: 30px;
+   }
+   .novoEstado, .substituir, .direcao, .inputLetra{
+     width:20px;
+   }
+.form-container h2 {
+   font-size:18px;
+   margin: 0 0 10px 0;
+   text-align:center;
+    }
+.form-title {
+   margin-bottom:10px;
+   color: #ffffff;
+   display: inline-block;
+   }
+.submit-container {
+   margin:8px 0;
+   text-align:right;
+   }
+.submit-button {
+   border: 0px solid #731515;
+   background: #ffffff;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   color: #000000;
+   padding: 8.5px 18px;
+   font-size: 14px;
+   text-decoration: none;
+   vertical-align: middle;
+   width: 50px;
+   }
