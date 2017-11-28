@@ -33,7 +33,21 @@
                     </tr>
                 </tbody>
             </table>
+            <div class='form-title'>Nome para salvar maquina:</div><input class='form-field' name="maquinaSalvar" type='text'/>
+            <div class='submit-container'><div class='submit-button' onclick='salvarTabela();'>Salvar</div></div>
+        </form>
+        <form class="form-container">
 
+            <h2>Testar sentença</h2>
+            <div class='form-title'>Inserir sentença:</div><input class='form-field-sentenca'  name="sentenca" type='text'/></br>
+            <div class='form-title'>Estado Final:</div><input class='form-field' name="estadoFinal" type='text'/>
+            <div class='form-title'>Estado Inicial:</div><input class='form-field' name="estadoInicial" type='text'/>
+            <div class='form-title'>Nome da maquina:</div><input class='form-field' name="maquina" type='text'/>
+            <h3> Lista de maquinas salvas </h3>
+            <div id="maquinas">
+
+            </div>
+            <div class='submit-container'><div class='submit-button' onclick='testarSentenca();'>Testar</div></div>
 
         </form>
     </body>
@@ -63,7 +77,6 @@
             idLetras = 2;
         });
 
-        $(".form-container").append("<div class='submit-container'><div class='submit-button' onclick='salvarTabela();'>Salvar</div></div>");
     }
 
     function salvarTabela() {
@@ -81,6 +94,8 @@
             arrayLetras[$(this).attr('id')] = ($(this).val());
             numeroLetras++;
         });
+        var jsonRequest = {};
+        jsonRequest.nomeMaquina = $('input[name=maquinaSalvar]').val();
 
         var arrayInformacoes = {};
 
@@ -162,17 +177,18 @@
         });
 
         console.log(JSON.stringify(arrayInformacoes));
-
-
+        jsonRequest.maquina = arrayInformacoes;
+        console.log(JSON.stringify(jsonRequest));
         $.ajax({
             type: 'post',
-            data: JSON.stringify(arrayInformacoes),
+            data: JSON.stringify(jsonRequest),
             dataType: 'json',
             contentType: 'application/json',
             url: 'salvarMaquina.php',
             success: function (response) {
                 console.log(response);
-
+                listarMaquinas();
+                alert("Maquina salva com sucesso! Consulte a lista de maquinas e teste suas sentencas");
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(errorThrown);
@@ -180,8 +196,55 @@
             }
 
         });
-        $(".form-container").append("<div class='form-title'>Inserir sentença:</div><input class='form-field' type='text'/>");
-        $(".form-container").append("<div class='submit-container'><div class='submit-button' onclick='salvarTabela();'>Testar</div></div>");
+
+    }
+
+    function testarSentenca() {
+        var requestTestar = {
+            "nomeMaquina":$('input[name=maquina]').val(),
+            "estadoInicial":$('input[name=estadoInicial]').val(),
+            "estadoFinal":$('input[name=estadoFinal]').val(),
+            "sentenca":$('input[name=sentenca]').val()
+        };
+        $.ajax({
+            type: 'post',
+            data: JSON.stringify(requestTestar),
+            dataType: 'json',
+            contentType: 'application/json',
+            url: 'index.php',
+            success: function (response) {
+                console.log(response);
+
+                alert(response.resposta);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+
+            }
+
+        });
+    }
+    listarMaquinas();
+    function listarMaquinas() {
+        $("#maquinas").empty();
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            url: 'listarMaquinas.php',
+            success: function (response) {
+                console.log(response);
+                for (i = 0; i < response.length; i++) {
+                    $("#maquinas").append("<p> " + response[i] + " </p>");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+
+            }
+
+        });
+
     }
 
 </script>

@@ -1,0 +1,252 @@
+[19:13:24 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[19:13:24 CET] 
+[19:13:51 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[19:13:51 CET] 
+[19:15:07 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q1
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[19:15:07 CET] 
+[19:17:07 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[19:17:07 CET] 
+[19:19:07 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[19:19:08 CET] Array
+(
+    [|] => Array
+        (
+            [estado] => q0
+            [substitui] => |
+            [direcao] => d
+        )
+
+    [#] => Array
+        (
+            [estado] => q4
+            [substitui] => #
+            [direcao] => d
+        )
+
+    [a] => Array
+        (
+            [estado] => q1
+            [substitui] => A
+            [direcao] => d
+        )
+
+    [b] => Array
+        (
+            [estado] => q3
+            [substitui] => B
+            [direcao] => d
+        )
+
+    [A] => Array
+        (
+            [estado] => q0
+            [substitui] => A
+            [direcao] => d
+        )
+
+    [B] => Array
+        (
+            [estado] => q0
+            [substitui] => B
+            [direcao] => d
+        )
+
+)
+
+[19:22:24 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q1
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[19:22:24 CET] Array
+(
+    [|] => Array
+        (
+            [estado] => 
+            [substitui] => 
+            [direcao] => 
+        )
+
+    [#] => Array
+        (
+            [estado] => 
+            [substitui] => 
+            [direcao] => 
+        )
+
+    [a] => Array
+        (
+            [estado] => q1
+            [substitui] => a
+            [direcao] => d
+        )
+
+    [b] => Array
+        (
+            [estado] => q2
+            [substitui] => B
+            [direcao] => e
+        )
+
+    [A] => Array
+        (
+            [estado] => q1
+            [substitui] => A
+            [direcao] => d
+        )
+
+    [B] => Array
+        (
+            [estado] => q1
+            [substitui] => B
+            [direcao] => d
+        )
+
+)
+
+[19:22:31 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[19:22:31 CET] Array
+(
+    [|] => Array
+        (
+            [estado] => q0
+            [substitui] => |
+            [direcao] => d
+        )
+
+    [#] => Array
+        (
+            [estado] => q4
+            [substitui] => #
+            [direcao] => d
+        )
+
+    [a] => Array
+        (
+            [estado] => q1
+            [substitui] => A
+            [direcao] => d
+        )
+
+    [b] => Array
+        (
+            [estado] => q3
+            [substitui] => B
+            [direcao] => d
+        )
+
+    [A] => Array
+        (
+            [estado] => q0
+            [substitui] => A
+            [direcao] => d
+        )
+
+    [B] => Array
+        (
+            [estado] => q0
+            [substitui] => B
+            [direcao] => d
+        )
+
+)
+
+[19:22:37 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabbb
+)
+
+[19:22:37 CET] Array
+(
+    [|] => Array
+        (
+            [estado] => q0
+            [substitui] => |
+            [direcao] => d
+        )
+
+    [#] => Array
+        (
+            [estado] => q4
+            [substitui] => #
+            [direcao] => d
+        )
+
+    [a] => Array
+        (
+            [estado] => q1
+            [substitui] => A
+            [direcao] => d
+        )
+
+    [b] => Array
+        (
+            [estado] => q3
+            [substitui] => B
+            [direcao] => d
+        )
+
+    [A] => Array
+        (
+            [estado] => q0
+            [substitui] => A
+            [direcao] => d
+        )
+
+    [B] => Array
+        (
+            [estado] => q0
+            [substitui] => B
+            [direcao] => d
+        )
+
+)
+

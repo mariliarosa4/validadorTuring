@@ -18,6 +18,16 @@ body{
    padding:20px;
    width:98%;
  }
+ 
+ .form-field-sentenca{
+    border: 1px solid #c9b7a2;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   padding:8px;
+   margin-bottom:20px;
+   width:50%;  
+ }
 .form-field {
    border: 1px solid #c9b7a2;
    -webkit-border-radius: 0px;

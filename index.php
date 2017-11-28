@@ -4,21 +4,27 @@
 header('Content-Type: application/json');
 $request= json_decode(file_get_contents('php://input'), true);
 
-$arquivoMaquinaExistente = file_get_contents('maquinas/maquina1.json');
+$arquivo = fopen("testes.log", "ab");
+$hora = date("H:i:s T");
+fwrite($arquivo, "[$hora] " . print_r($request, TRUE) . "\r\n");
+fclose($arquivo);
+
+
+$arquivoMaquinaExistente = file_get_contents('maquinas/'.$request['nomeMaquina'].'.json');
 
 $tabela = json_decode($arquivoMaquinaExistente,true);
 
 $caracterInicial = "|";
 $caracterFinal = "#";
 
-$palavra = $caracterInicial . "aabbb" . $caracterFinal;
+$palavra = $caracterInicial . $request['sentenca'] . $caracterFinal;
 
 $palavraArray = str_split($palavra, 1);
 
 //print_r($palavraArray);
 $valida = 2;
-$estadoAtual = 'q0';
-$estadoFinal = 'q4';
+$estadoAtual = $request['estadoInicial'];
+$estadoFinal = $request['estadoFinal'];
 $posicaoPalavra = 0;
 
 $arquivo = fopen("testes.log", "ab");
@@ -50,15 +56,15 @@ while ($valida == 2) {
             $estadoAtual = $tabela[$estadoAtual][$atual]['estado'];
             if ($estadoAtual == $estadoFinal) {
                 $valida = 1;
-                echo json_encode(array("resposta" => "<h1>>>>>Palavra valida</h1>"));
+                echo json_encode(array("resposta" => "VALIDA"));
             }
         } else {
             $valida = 0;
-            echo json_encode(array("resposta" => ">>>>Palavra invalida"));
+            echo json_encode(array("resposta" => "invalida"));
         }
     } else {
         $valida = 0;
-        echo json_encode(array("resposta" => ">>>>Palavra invalida"));
+        echo json_encode(array("resposta" => "invalida"));
     }
 }
 
