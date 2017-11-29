@@ -14,13 +14,18 @@ $arquivoMaquinaExistente = file_get_contents('maquinas/'.$request['nomeMaquina']
 
 $tabela = json_decode($arquivoMaquinaExistente,true);
 
-$caracterInicial = "¬";
+$caracterInicial ="|";
 $caracterFinal = "#";
 
 $palavra = $caracterInicial . $request['sentenca'] . $caracterFinal;
 
 $palavraArray = str_split($palavra, 1);
+$arquivo = fopen("testes.log", "ab");
 
+
+$hora = date("H:i:s T");
+fwrite($arquivo, "[$hora] palavra array" . print_r($palavraArray, TRUE) . "\r\n");
+fclose($arquivo);
 //print_r($palavraArray);
 $valida = 2;
 $estadoAtual = $request['estadoInicial'];
@@ -43,10 +48,10 @@ while ($valida == 2) {
             //substituir a letra na fita
             $palavraArray[$posicaoPalavra] = $tabela[$estadoAtual][$atual]['substitui'];
             //alterar posicao da palavra na fita
-            if ($tabela[$estadoAtual][$atual]['direcao'] == 'd') {
+            if (strtolower($tabela[$estadoAtual][$atual]['direcao']) == 'd') {
                 $posicaoPalavra++;
             } else {
-                if ($tabela[$estadoAtual][$atual]['direcao'] == 'e') {
+                if (strtolower($tabela[$estadoAtual][$atual]['direcao']) == 'e') {
                     $posicaoPalavra--;
                 } else {
                     //      echo"FALHA NA DIREÇÃO " . $tabela[$estadoAtual][$atual]['direcao'];

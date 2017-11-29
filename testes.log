@@ -250,3 +250,261 @@
 
 )
 
+[01:37:03 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] => 
+)
+
+[01:37:03 CET] q1
+[01:37:14 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] =>  
+)
+
+[01:37:14 CET] q1
+[01:37:52 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] =>  
+)
+
+[01:37:52 CET] q1
+[01:39:27 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] => 
+)
+
+[01:39:27 CET] q1
+[01:40:23 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] => 
+)
+
+[01:40:23 CET] palavra arrayArray
+(
+    [0] => Â
+    [1] => ¬
+    [2] => #
+)
+
+[01:40:23 CET] q1
+[01:41:14 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:41:14 CET] palavra arrayArray
+(
+    [0] => Â
+    [1] => ¬
+    [2] => a
+    [3] => b
+    [4] => #
+)
+
+[01:41:14 CET] q4
+[01:43:28 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] => 
+)
+
+[01:43:28 CET] palavra arrayArray
+(
+    [0] => Â
+    [1] => ¬
+    [2] => #
+)
+
+[01:43:28 CET] q1
+[01:43:40 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:43:40 CET] palavra arrayArray
+(
+    [0] => Â
+    [1] => ¬
+    [2] => a
+    [3] => b
+    [4] => #
+)
+
+[01:43:40 CET] q4
+[01:46:04 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:46:04 CET] palavra arrayArray
+(
+    [0] => Â
+    [1] => ¬
+    [2] => a
+    [3] => b
+    [4] => #
+)
+
+[01:46:04 CET] q4
+[01:49:17 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:49:17 CET] palavra arrayArray
+(
+    [0] => ¬
+    [1] => a
+    [2] => b
+    [3] => #
+)
+
+[01:49:17 CET] q4
+[01:51:27 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:51:27 CET] palavra arrayArray
+(
+    [0] => ¬
+    [1] => a
+    [2] => b
+    [3] => #
+)
+
+[01:51:27 CET] q4
+[01:52:39 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:52:39 CET] palavra arrayArray
+(
+    [0] => Ã
+    [1] => ‚
+    [2] => Â
+    [3] => ¬
+    [4] => a
+    [5] => b
+    [6] => #
+)
+
+[01:52:39 CET] q4
+[01:54:21 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:54:21 CET] palavra arrayArray
+(
+    [0] => ¬
+    [1] => a
+    [2] => b
+    [3] => #
+)
+
+[01:54:21 CET] q4
+[01:55:57 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => ab
+)
+
+[01:55:57 CET] palavra arrayArray
+(
+    [0] => |
+    [1] => a
+    [2] => b
+    [3] => #
+)
+
+[01:55:57 CET] q4
+[01:56:17 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] => 
+)
+
+[01:56:17 CET] palavra arrayArray
+(
+    [0] => |
+    [1] => #
+)
+
+[01:56:17 CET] q1
+[01:56:22 CET] Array
+(
+    [nomeMaquina] => vazia
+    [estadoInicial] => q0
+    [estadoFinal] => q1
+    [sentenca] => x
+)
+
+[01:56:22 CET] palavra arrayArray
+(
+    [0] => |
+    [1] => x
+    [2] => #
+)
+
+[01:56:22 CET] q1
+[02:01:16 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4;q10
+    [sentenca] => ab
+)
+
+[02:01:16 CET] palavra arrayArray
+(
+    [0] => |
+    [1] => a
+    [2] => b
+    [3] => #
+)
+
+[02:01:16 CET] q4;q10

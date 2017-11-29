@@ -2,6 +2,9 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
+input:required { 
+    background-color:  #ffcccc;
+}
 body{
   margin: 0px;
 }

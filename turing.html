@@ -8,220 +8,280 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type="text/css" href="turing.css">
-
+        <!--        <link rel="stylesheet" type = "text/css" href="materialize/css/materialize.min.css">-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     </head>
     <body>
-        <form class="form-container">
-            <div class="form-title">
-                <h2>Definições</h2>
-            </div><br>
-            <div class="form-title">Número de estados:</div>
-            <input class="form-field nrEstados" id="nrEstados" type="number"/>
-            <div class="form-title">Número de letras:</div>
-            <input class="form-field nrLetras" id="nrLetras" type="number"/>
-            <div class="submit-container">
-                <div class="submit-button" onclick="gerarTabela();">Gerar Tabela</div>
-            </div>
+        <div>
+            <fieldset class="majorpoints">
+                <legend class="majorpointslegend"><h1>Instruções</h1></legend>
+
+                <ul>
+                    <li>Crie sua máquina</li>
+                    <ul>
+                        <li>Informe o numero de estados e alfabeto</li>
+
+                        <li>Clique em gerar tabela </li>
+                        <li>Preencha os estados e o alfabeto da tabela </li>
+                        <li>Informe o nome da máquina para salvar</li>
+                        <li>Clique em salvar</li>
+                        <li>Utilize sempre que quiser</li>
+                    </ul>
+
+                    <li>Teste sua máquina</li>
+                    <ul>
+                        <li>Informe o estado inicial</li>
+                        <li>Preencha os estados finais separados por ; </li>
+                        <li>Insira a sentença</li>
+                        <li>Insira o nome do arquivo da máquina</li>
+                        <li>Clique em testar</li>
+                    </ul>
+                    <li>Campos em vermelho são obrigatórios</li>
+                </ul>
+
+        </div>
+        <div>
+            <fieldset class="majorpoints_criar">
+                <legend class="majorpointslegend"><h1>Criar Máquina</h1></legend>
+
+                <div class="hider" style="display:none" >
+
+                    <form class="form-container" id="formCriar">
+                        <div class="form-title">
+                            <h2>Definições</h2>
+                        </div><br>
+                        <div class="form-title">Número de estados:</div>
+                        <input class="form-field nrEstados" id="nrEstados" type="number" min="1" required/>
+                        <div class="form-title">Número de letras:</div>
+                        <input class="form-field nrLetras" id="nrLetras" type="number" min="1" required/>
+                        <div class="submit-container">
+                            <div class="submit-button" onclick="gerarTabela();">Gerar Tabela</div>
+                        </div>
 
 
-            <table>
-                <tbody id="bodyTable">
-                    <tr id="rowLetras">
-                        <td>&nbsp;</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class='form-title'>Nome para salvar máquina:&nbsp;&nbsp;</div><input class='form-field nomeMaquina' name="maquinaSalvar" type='text'/>
-            <div class='submit-container'><div class='submit-button' onclick='salvarTabela();'>Salvar</div></div>
-        </form>
-        <form class="form-container">
+                        <table>
+                            <tbody id="bodyTable">
+                                <tr id="rowLetras">
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class='form-title'>Nome para salvar máquina:&nbsp;&nbsp;</div><input class='form-field nomeMaquina' name="maquinaSalvar" type='text' required/>
+                        <div class='submit-container'><div class='submit-button' onclick='salvarTabela();'>Salvar</div></div>
+                    </form>
+                </div>
+        </div>
+        <div>
+            <fieldset class="majorpoints_testar">
+                <legend class="majorpointslegend"><h1>Testar Máquina</h1></legend>
 
-            <div class='form-title'>Inserir sentença:&nbsp;&nbsp;</div><input class='form-field-sentenca'  name="sentenca" type='text'/></br>
-            <div class='form-title'>Estado Final:&nbsp;&nbsp;</div><input class='form-field' name="estadoFinal" type='text'/>
-            <div class='form-title'>Estado Inicial:&nbsp;&nbsp;</div><input class='form-field' name="estadoInicial" type='text'/>
-            <div class='form-title'>Nome da máquina:&nbsp;&nbsp;</div><input class='form-field' name="maquina" type='text'/>
-            <h3> Lista de máquinas salvas </h3>
-            <div id="maquinas">
+                <div class="hider" style="display:none" >
+                    <form class="form-container" id="formTestar">
 
-            </div>
-            <div class='submit-container'><div class='submit-button' onclick='testarSentenca();'>Testar</div></div>
+                        <div class='form-title'>Inserir sentença:&nbsp;&nbsp;</div><input class='form-field-sentenca'  name="sentenca" type='text' required/></br>
+                        <div class='form-title'>Estado Final:&nbsp;&nbsp;</div><input class='form-field' name="estadoFinal" type='text' required />
+                        <div class='form-title'>Estado Inicial:&nbsp;&nbsp;</div><input class='form-field' name="estadoInicial" type='text' required/>
+                        <div class='form-title'>Nome da máquina:&nbsp;&nbsp;</div><input class='form-field nomeMaquina' name="maquina" type='text' required/>
+                        <h3> Lista de máquinas salvas </h3>
+                        <div id="maquinas">
 
-        </form>
+                        </div>
+                        <div class='submit-container'><div class='submit-button' onclick='testarSentenca();'>Testar</div></div>
+                </div>
+
+                </form>
+        </div>
     </body>
 </html>
 <script type="text/javascript">
+    $('.majorpoints_criar').click(function () {
+        $(this).find('.hider').show();
+    });
+    $('.majorpoints_testar').click(function () {
+        $(this).find('.hider').show();
+    });
+
     function gerarTabela() {
-
-        $("#rowLetras").append("<td class='letra'><div  id='0' class='form-title'>¬</div></td><td class='letra'><div id='1' class='form-title'>#</div></td>");
-        idLetras = 2;
-        for (var x = 0; x < $("#nrLetras").val(); x++) {
-            $("#rowLetras").append("<td class='letra'><div class='form-title'>Letra</div><input class='form-field inputLetra' id='" + idLetras + "' type='text'/></td>");
-            idLetras++;
-        }
-
-        for (var x = 0; x < $("#nrEstados").val(); x++) {
-            $("#bodyTable").append("<tr class='rowEstados' id='" + x + "'><td><div class='form-title'>Estado</div><input class='form-field estado' id='" + x + "' type='text'/></td></tr>");
-        }
-
-        idLetras = 2;
-        $('.rowEstados').each(function () {
-            $(this).append("<td id='" + 0 + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
-            $(this).append("<td id='" + 1 + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
-            for (var y = 0; y < $("#nrLetras").val(); y++) {
-                $(this).append("<td id='" + idLetras + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
+        if ($('#formCriar')[0].checkValidity()) {
+            $("#rowLetras").append("<td class='letra'><div  id='0' class='form-title'>|</div></td><td class='letra'><div id='1' class='form-title'>#</div></td>");
+            idLetras = 2;
+            for (var x = 0; x < $("#nrLetras").val(); x++) {
+                $("#rowLetras").append("<td class='letra'><div class='form-title'>Letra</div><input class='form-field inputLetra' id='" + idLetras + "' type='text' required/></td>");
                 idLetras++;
             }
-            idLetras = 2;
-        });
 
+            for (var x = 0; x < $("#nrEstados").val(); x++) {
+                $("#bodyTable").append("<tr class='rowEstados' id='" + x + "'><td><div class='form-title'>Estado</div><input class='form-field estado' id='" + x + "' type='text' required/></td></tr>");
+            }
+
+            idLetras = 2;
+            $('.rowEstados').each(function () {
+                $(this).append("<td id='" + 0 + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
+                $(this).append("<td id='" + 1 + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
+                for (var y = 0; y < $("#nrLetras").val(); y++) {
+                    $(this).append("<td id='" + idLetras + "'><input class='form-field novoEstado' type='text'/><input class='form-field substituir' type='text'/><input class='form-field direcao' type='text'/></td>");
+                    idLetras++;
+                }
+                idLetras = 2;
+            });
+        } else {
+            alert("Os campos obrigatórios devem ser preenchidos");
+        }
     }
 
     function salvarTabela() {
-
-        var arrayEstados = [];
-        var numeroEstados = 0;
-        $(".form-field.estado").each(function () {
-            arrayEstados.push($(this).val());
-            numeroEstados++;
-        });
-
-        var arrayLetras = [];
-        var numeroLetras = 2;
-        $(".form-field.inputLetra").each(function () {
-            arrayLetras[$(this).attr('id')] = ($(this).val());
-            numeroLetras++;
-        });
-        var jsonRequest = {};
-        jsonRequest.nomeMaquina = $('input[name=maquinaSalvar]').val();
-
-        var arrayInformacoes = {};
-
-        $('.rowEstados').each(function () {
-            var letraAtual = 0;
-            var estadoAtual = arrayEstados[$(this).attr('id')];
-
-            if (arrayInformacoes[estadoAtual] == null) {
-                arrayInformacoes[estadoAtual] = {};
-            }
-
-            $(this).children('td').each(function () {
-                var letraAtual = $(this).attr('id');
-
-                if (letraAtual >= 2) {
-
-                    if (arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] == null) {
-                        arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] = {};
-                    }
-
-
-                    var item = new Object();
-                    $(this).children(".novoEstado").each(function () {
-
-                        item.estado = $(this).val();
-                    });
-                    $(this).children(".substituir").each(function () {
-                        item.substitui = $(this).val();
-                    });
-                    $(this).children(".direcao").each(function () {
-                        item.direcao = $(this).val();
-                    });
-
-                    arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] = item;
-                }
-                if (letraAtual == 0) {
-
-                    if (arrayInformacoes[estadoAtual]["¬"] == null) {
-                        arrayInformacoes[estadoAtual]["¬"] = {};
-                    }
-                    var item = {};
-
-                    $(this).children(".novoEstado").each(function () {
-
-                        item ["estado"] = $(this).val();
-                    });
-                    $(this).children(".substituir").each(function () {
-                        item["substitui"] = $(this).val();
-                    });
-                    $(this).children(".direcao").each(function () {
-                        item["direcao"] = $(this).val();
-                    });
-
-
-                    arrayInformacoes[estadoAtual]["¬"] = item;
-                }
-                if (letraAtual == 1) {
-
-                    if (arrayInformacoes[estadoAtual]["#"] == null) {
-                        arrayInformacoes[estadoAtual]["#"] = {};
-                    }
-                    var item = {};
-                    $(this).children(".novoEstado").each(function () {
-
-                        item ["estado"] = $(this).val();
-                    });
-                    $(this).children(".substituir").each(function () {
-                        item["substitui"] = $(this).val();
-                    });
-                    $(this).children(".direcao").each(function () {
-                        item["direcao"] = $(this).val();
-                    });
-
-
-                    arrayInformacoes[estadoAtual]["#"] = item;
-                }
-                letraAtual++;
+        if ($('#formCriar')[0].checkValidity()) {
+            var arrayEstados = [];
+            var numeroEstados = 0;
+            $(".form-field.estado").each(function () {
+                arrayEstados.push($(this).val());
+                numeroEstados++;
             });
-        });
 
-        console.log(JSON.stringify(arrayInformacoes));
-        jsonRequest.maquina = arrayInformacoes;
-        console.log(JSON.stringify(jsonRequest));
-        $.ajax({
-            type: 'post',
-            data: JSON.stringify(jsonRequest),
-            dataType: 'json',
-            contentType: 'application/json',
-            url: 'salvarMaquina.php',
-            success: function (response) {
-                console.log(response);
-                listarMaquinas();
-                alert("Maquina salva com sucesso! Consulte a lista de maquinas e teste suas sentencas");
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(errorThrown);
+            var arrayLetras = [];
+            var numeroLetras = 2;
+            $(".form-field.inputLetra").each(function () {
+                arrayLetras[$(this).attr('id')] = ($(this).val());
+                numeroLetras++;
+            });
+            var jsonRequest = {};
+            jsonRequest.nomeMaquina = $('input[name=maquinaSalvar]').val();
 
-            }
+            var arrayInformacoes = {};
 
-        });
+            $('.rowEstados').each(function () {
+                var letraAtual = 0;
+                var estadoAtual = arrayEstados[$(this).attr('id')];
+
+                if (arrayInformacoes[estadoAtual] == null) {
+                    arrayInformacoes[estadoAtual] = {};
+                }
+
+                $(this).children('td').each(function () {
+                    var letraAtual = $(this).attr('id');
+
+                    if (letraAtual >= 2) {
+
+                        if (arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] == null) {
+                            arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] = {};
+                        }
+
+
+                        var item = new Object();
+                        $(this).children(".novoEstado").each(function () {
+
+                            item.estado = $(this).val();
+                        });
+                        $(this).children(".substituir").each(function () {
+                            item.substitui = $(this).val();
+                        });
+                        $(this).children(".direcao").each(function () {
+                            item.direcao = $(this).val();
+                        });
+
+                        arrayInformacoes[estadoAtual][arrayLetras[letraAtual]] = item;
+                    }
+                    if (letraAtual == 0) {
+
+                        if (arrayInformacoes[estadoAtual]["|"] == null) {
+                            arrayInformacoes[estadoAtual]["|"] = {};
+                        }
+                        var item = {};
+
+                        $(this).children(".novoEstado").each(function () {
+
+                            item ["estado"] = $(this).val();
+                        });
+                        $(this).children(".substituir").each(function () {
+                            item["substitui"] = $(this).val();
+                        });
+                        $(this).children(".direcao").each(function () {
+                            item["direcao"] = $(this).val();
+                        });
+
+
+                        arrayInformacoes[estadoAtual]["|"] = item;
+                    }
+                    if (letraAtual == 1) {
+
+                        if (arrayInformacoes[estadoAtual]["#"] == null) {
+                            arrayInformacoes[estadoAtual]["#"] = {};
+                        }
+                        var item = {};
+                        $(this).children(".novoEstado").each(function () {
+
+                            item ["estado"] = $(this).val();
+                        });
+                        $(this).children(".substituir").each(function () {
+                            item["substitui"] = $(this).val();
+                        });
+                        $(this).children(".direcao").each(function () {
+                            item["direcao"] = $(this).val();
+                        });
+
+
+                        arrayInformacoes[estadoAtual]["#"] = item;
+                    }
+                    letraAtual++;
+                });
+            });
+
+            console.log(JSON.stringify(arrayInformacoes));
+            jsonRequest.maquina = arrayInformacoes;
+            console.log(JSON.stringify(jsonRequest));
+            $.ajax({
+                type: 'post',
+                data: JSON.stringify(jsonRequest),
+                dataType: 'json',
+                contentType: 'application/json',
+                url: 'salvarMaquina.php',
+                success: function (response) {
+                    console.log(response);
+                    listarMaquinas();
+                    alert("Maquina salva com sucesso! Consulte a lista de maquinas e teste suas sentencas");
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+
+                }
+
+            });
+        } else {
+            alert("Os campos obrigatórios devem ser preenchidos");
+        }
 
     }
 
     function testarSentenca() {
-        var requestTestar = {
-            "nomeMaquina":$('input[name=maquina]').val(),
-            "estadoInicial":$('input[name=estadoInicial]').val(),
-            "estadoFinal":$('input[name=estadoFinal]').val(),
-            "sentenca":$('input[name=sentenca]').val()
-        };
-        $.ajax({
-            type: 'post',
-            data: JSON.stringify(requestTestar),
-            dataType: 'json',
-            contentType: 'application/json',
-            url: 'index.php',
-            success: function (response) {
-                console.log(response);
+        if ($('#formTestar')[0].checkValidity()) {
+            var requestTestar = {
+                "nomeMaquina": $('input[name=maquina]').val(),
+                "estadoInicial": $('input[name=estadoInicial]').val(),
+                "estadoFinal": $('input[name=estadoFinal]').val(),
+                "sentenca": $('input[name=sentenca]').val()
+            };
+            console.log(JSON.stringify(requestTestar));
+            $.ajax({
+                type: 'post',
+                data: JSON.stringify(requestTestar),
+                dataType: 'json',
+                contentType: 'application/json',
+                url: 'index.php',
+                success: function (response) {
+                    console.log(response);
 
-                alert(response.resposta);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(errorThrown);
+                    alert(response.resposta);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
 
-            }
+                }
 
-        });
+            });
+        } else {
+            alert("Os campos obrigatórios devem ser preenchidos");
+        }
     }
     listarMaquinas();
     function listarMaquinas() {

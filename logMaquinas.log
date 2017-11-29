@@ -1,72 +1,29 @@
-[18:43:59 CET] Array
+[02:21:12 CET] Array
 (
-)
-
-[18:52:51 CET] Array
-(
-)
-
-[18:52:52 CET] Array
-(
-)
-
-[18:52:53 CET] Array
-(
-)
-
-[18:52:54 CET] Array
-(
-)
-
-[18:52:54 CET] Array
-(
-)
-
-[18:52:58 CET] Array
-(
-)
-
-[18:52:59 CET] Array
-(
-)
-
-[18:52:59 CET] Array
-(
-)
-
-[18:56:06 CET] Array
-(
-    [nomeMaquina] => Array
-        (
-            [0] => Array
-                (
-                )
-
-        )
-
+    [nomeMaquina] => 
     [maquina] => Array
         (
-            [q0] => Array
+            [] => Array
                 (
-                    [2] => Array
-                        (
-                            [estado] => j
-                            [substitui] => j
-                            [direcao] => j
-                        )
-
                     [|] => Array
                         (
-                            [estado] => j
-                            [substitui] => j
-                            [direcao] => j
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                     [#] => Array
                         (
-                            [estado] => jj
-                            [substitui] => j
-                            [direcao] => j
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
+                        )
+
+                    [] => Array
+                        (
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                 )
@@ -75,32 +32,32 @@
 
 )
 
-[18:59:52 CET] Array
+[02:26:52 CET] Array
 (
-    [nomeMaquina] => nova
+    [nomeMaquina] => 
     [maquina] => Array
         (
-            [q0] => Array
+            [] => Array
                 (
                     [|] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                     [#] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
-                    [b] => Array
+                    [] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 00
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                 )
@@ -109,32 +66,32 @@
 
 )
 
-[19:02:10 CET] Array
+[02:27:59 CET] Array
 (
-    [nomeMaquina] => nova
+    [nomeMaquina] => 
     [maquina] => Array
         (
-            [q0] => Array
+            [] => Array
                 (
                     [|] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                     [#] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
-                    [b] => Array
+                    [] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 00
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                 )
@@ -143,32 +100,32 @@
 
 )
 
-[19:03:00 CET] Array
+[02:28:05 CET] Array
 (
-    [nomeMaquina] => nova
+    [nomeMaquina] => 
     [maquina] => Array
         (
-            [q0] => Array
+            [] => Array
                 (
                     [|] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                     [#] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
-                    [b] => Array
+                    [] => Array
                         (
-                            [estado] => 0
-                            [substitui] => 00
-                            [direcao] => 0
+                            [estado] => 
+                            [substitui] => 
+                            [direcao] => 
                         )
 
                 )
@@ -177,41 +134,7 @@
 
 )
 
-[19:03:11 CET] Array
-(
-    [nomeMaquina] => nova
-    [maquina] => Array
-        (
-            [q0] => Array
-                (
-                    [|] => Array
-                        (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
-                        )
-
-                    [#] => Array
-                        (
-                            [estado] => 0
-                            [substitui] => 0
-                            [direcao] => 0
-                        )
-
-                    [b] => Array
-                        (
-                            [estado] => 0
-                            [substitui] => 00
-                            [direcao] => 0
-                        )
-
-                )
-
-        )
-
-)
-
-[19:05:55 CET] Array
+[02:30:15 CET] Array
 (
     [nomeMaquina] => 
     [maquina] => Array
@@ -220,25 +143,7 @@
 
 )
 
-[19:06:14 CET] Array
-(
-    [nomeMaquina] => 
-    [maquina] => Array
-        (
-        )
-
-)
-
-[19:06:17 CET] Array
-(
-    [nomeMaquina] => 
-    [maquina] => Array
-        (
-        )
-
-)
-
-[19:06:40 CET] Array
+[02:31:38 CET] Array
 (
     [nomeMaquina] => 
     [maquina] => Array

@@ -8,7 +8,8 @@ if ($handle = opendir('maquinas')) {
     while ($entry = readdir($handle)) {
         $ext = strtolower(pathinfo($entry, PATHINFO_EXTENSION));
         if (in_array($ext, $types)) {
-            $arquivos[] = $entry;
+            $nomeSemExtensao = explode('.', $entry);
+            $arquivos[] = $nomeSemExtensao[0];
         }
     }
     closedir($handle);
