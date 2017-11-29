@@ -103,6 +103,8 @@
     });
 
     function gerarTabela() {
+       $('#bodyTable').empty();
+        $('#bodyTable').append('<tr id="rowLetras"><td>&nbsp;</td></tr>');
         if ($('#formCriar')[0].checkValidity()) {
             $("#rowLetras").append("<td class='letra'><div  id='0' class='form-title'>|</div></td><td class='letra'><div id='1' class='form-title'>#</div></td>");
             idLetras = 2;
