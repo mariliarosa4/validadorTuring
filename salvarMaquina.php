@@ -1,7 +1,7 @@
 <?php
 $tabela = json_decode(file_get_contents('php://input'), true);
 
-$maquinaArquivo = fopen("maquinas/".$tabela['nomeMaquina'].".json", "a");
+$maquinaArquivo = fopen("maquinas/".$tabela['nomeMaquina'].".json", "w");
 
 fwrite($maquinaArquivo, json_encode($tabela['maquina']));
 fclose($maquinaArquivo);

@@ -508,3 +508,62 @@
 )
 
 [02:01:16 CET] q4;q10
+[14:16:26 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabb
+)
+
+[14:16:26 CET] palavra arrayArray
+(
+    [0] => |
+    [1] => a
+    [2] => a
+    [3] => b
+    [4] => b
+    [5] => #
+)
+
+[14:16:26 CET] q4
+[14:16:29 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q4
+    [sentenca] => aabbbb
+)
+
+[14:16:29 CET] palavra arrayArray
+(
+    [0] => |
+    [1] => a
+    [2] => a
+    [3] => b
+    [4] => b
+    [5] => b
+    [6] => b
+    [7] => #
+)
+
+[14:16:29 CET] q4
+[14:16:38 CET] Array
+(
+    [nomeMaquina] => abmesmaquantidade
+    [estadoInicial] => q0
+    [estadoFinal] => q3
+    [sentenca] => aabb
+)
+
+[14:16:38 CET] palavra arrayArray
+(
+    [0] => |
+    [1] => a
+    [2] => a
+    [3] => b
+    [4] => b
+    [5] => #
+)
+
+[14:16:38 CET] q3

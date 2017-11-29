@@ -44,7 +44,6 @@ while ($valida == 2) {
         $atual = $palavraArray[$posicaoPalavra];
         //   echo "<br> >>>> Letra atual: " . $atual;
         if (isset($tabela[$estadoAtual][$atual])) {
-            //    echo"<br> Existe";
             //substituir a letra na fita
             $palavraArray[$posicaoPalavra] = $tabela[$estadoAtual][$atual]['substitui'];
             //alterar posicao da palavra na fita

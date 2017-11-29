@@ -152,3 +152,241 @@
 
 )
 
+[14:39:54 CET] Array
+(
+    [nomeMaquina] => testeSobrescrita
+    [maquina] => Array
+        (
+            [q0] => Array
+                (
+                    [|] => Array
+                        (
+                            [estado] => a
+                            [substitui] => sa
+                            [direcao] => s
+                        )
+
+                    [#] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                    [b] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                )
+
+        )
+
+)
+
+[14:40:00 CET] Array
+(
+    [nomeMaquina] => testeSobrescrita
+    [maquina] => Array
+        (
+            [q0] => Array
+                (
+                    [|] => Array
+                        (
+                            [estado] => a
+                            [substitui] => sa
+                            [direcao] => s
+                        )
+
+                    [#] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                    [b] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                )
+
+        )
+
+)
+
+[14:40:05 CET] Array
+(
+    [nomeMaquina] => testeSobrescrita
+    [maquina] => Array
+        (
+            [q0] => Array
+                (
+                    [|] => Array
+                        (
+                            [estado] => a
+                            [substitui] => sa
+                            [direcao] => s
+                        )
+
+                    [#] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                    [c] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                )
+
+        )
+
+)
+
+[14:40:43 CET] Array
+(
+    [nomeMaquina] => testeSobrescrita
+    [maquina] => Array
+        (
+            [q0] => Array
+                (
+                    [|] => Array
+                        (
+                            [estado] => a
+                            [substitui] => sa
+                            [direcao] => s
+                        )
+
+                    [#] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                    [c] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                )
+
+        )
+
+)
+
+[14:40:54 CET] Array
+(
+    [nomeMaquina] => testeSobrescrita
+    [maquina] => Array
+        (
+            [q1] => Array
+                (
+                    [|] => Array
+                        (
+                            [estado] => a
+                            [substitui] => sa
+                            [direcao] => s
+                        )
+
+                    [#] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                    [c] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                )
+
+        )
+
+)
+
+[14:42:58 CET] Array
+(
+    [nomeMaquina] => testeSobrescrita
+    [maquina] => Array
+        (
+            [q1] => Array
+                (
+                    [|] => Array
+                        (
+                            [estado] => a
+                            [substitui] => sa
+                            [direcao] => s
+                        )
+
+                    [#] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                    [c] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                )
+
+        )
+
+)
+
+[14:43:12 CET] Array
+(
+    [nomeMaquina] => testeSobrescrita
+    [maquina] => Array
+        (
+            [q0] => Array
+                (
+                    [|] => Array
+                        (
+                            [estado] => a
+                            [substitui] => sa
+                            [direcao] => s
+                        )
+
+                    [#] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                    [c] => Array
+                        (
+                            [estado] => s
+                            [substitui] => s
+                            [direcao] => s
+                        )
+
+                )
+
+        )
+
+)
+
